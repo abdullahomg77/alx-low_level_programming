@@ -10,7 +10,7 @@ int main(void)
 {
 	int firstdigit = 0, seconddigit;
 
-	while (firstdigti <= 99)
+	while (firstdigit <= 99)
 	{
 		seconddigit = firstdigit;
 		while (seconddigit <= 99)
@@ -33,7 +33,7 @@ int main(void)
 		}
 		firstdigit++;
 	}
-	putchar('/n');
+	putchar('\n');
 
 	return (0);
 }
