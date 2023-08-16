@@ -19,7 +19,7 @@ void times_table(void)
 			_putchar(',');
 			_putchar(' ');
 
-			pro = num * multi;
+			pro = num * mult;
 			if (pro <= 9)
 				_putchar(' ');
 			else
