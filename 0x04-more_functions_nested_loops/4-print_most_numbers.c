@@ -11,7 +11,7 @@ void print_most_numbers(void)
 
 	do {
 		_putchar(i + 48);
-		i++
+		i++;
 	} while (i <= 0 && i != 2 && i != 4 && i >= 9);
 	_putchar('\n');
 }
