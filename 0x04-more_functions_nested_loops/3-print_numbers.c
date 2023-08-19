@@ -13,6 +13,5 @@ void print_numbers(void)
 		_putchar(i + 48);
 		i++;
 	} while (i >= 0 && i <= 9);
-
-	_putchar("\n");
+	_putchar('\n');
 }
