@@ -7,11 +7,12 @@
 
 void print_most_numbers(void)
 {
-	int i = 0;
-
-	do {
-		_putchar(i + 48);
-		i++;
-	} while (i >= 0 && i != 2 && i != 4 && i <= 9);
+	int i
+	for (i = 0; i <= 9; i++)
+	{
+		if (num == 2 || num == 4)
+			continune;
+		_putchar(i +48);
+	}
 	_putchar('\n');
 }
