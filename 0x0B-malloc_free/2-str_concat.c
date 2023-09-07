@@ -16,7 +16,7 @@ int _strlen(char *s)
 }
 
 /**
- * str_concat - add two string
+ * *str_concat - add two string
  * @s1: string
  * @s2: string
  * Retrun: pointer p
