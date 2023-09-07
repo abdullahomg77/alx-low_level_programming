@@ -39,13 +39,13 @@ char *str_concat(char *s1, char *s2)
 	if (p == 0)
 		return (NULL);
 
-	for (i == 0; i <= n1 + n2; i++)
+	for (i = 0; i <= n1 + n2; i++)
 	{
 		if (i < n1)
 			p[i] = s1[i];
 		else
 			p[i] = s2[i - n1];
 	}
-	p[i] == '\0';
+	p[i] = '\0';
 	return (p);
 }
