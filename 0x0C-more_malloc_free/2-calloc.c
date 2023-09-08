@@ -1,41 +1,44 @@
 #include "main.h"
 
 /**
- * *_memset - memory
- * @s: pointer
- * @r: cons
- * @n: byts
- * Return: pointer
-*/
-
-char *_memset(char *s, char r, unsigned int n)
+ * *_memset - fills memory with a constant byte
+ * @s: memory area to be filled
+ * @b: char to copy
+ * @n: number of times to copy b
+ *
+ * Return: pointer to the memory area s
+ */
+char *_memset(char *s, char b, unsigned int n)
 {
-	char *p = s;
+	unsigned int i;
 
-	while (n--)
-		*s++ = r;
-
-	return (p);
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }
 
 /**
  * *_calloc - allocates memory
- * @nmemb: length of array
- * @size: size of element
+ * @nmemb: elements in byts
+ * @size: sizes
  * Return: pointer
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *i;
+	char *p;
 
-	if (size == 0 || nmemb == 0)
-		return (NULL);
-	i = malloc(sizeof(int) * nmemb);
-
-	if (i == 0)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	_memset(i, 0, sizeof(int) * nmemb);
-	return (i);
+	p = malloc(size * nmemb);
+
+	if (p == NULL)
+		return (NULL);
+
+	_memset(p, 0, nmemb * size);
+
+	return (p);
 }
