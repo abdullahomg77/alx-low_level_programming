@@ -60,43 +60,43 @@ void errors(void)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int l1, l2, l, i, cy, d1, d2, *result, a = 0;
+	int t1, t2, t, n, c, k1, k2, *res, z = 0;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		errors();
-	l1 = _strlen(s1);
-	l2 = _strlen(s2);
-	l = l1 + l2 + 1;
-	result = malloc(sizeof(int) * l);
-	if (!result)
+	t1 = _strlen(s1);
+	t2 = _strlen(s2);
+	t = t1 + t2 + 1;
+	res = malloc(sizeof(int) * t);
+	if (!res)
 		return (1);
-	for (i = 0; i <= l1 + l2; i++)
-		result[i] = 0;
-	for (l1 = l1 - 1; l1 >= 0; l1--)
+	for (n = 0; n <= t1 + t2; n++)
+		res[n] = 0;
+	for (t1 = t1 - 1; t1 >= 0; t1--)
 	{
-		d1 = s1[l1] - '0';
-		cy = 0;
-		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
+		k1 = s1[t1] - '0';
+		c = 0;
+		for (t2 = _strlen(s2) - 1; t2 >= 0; t2--)
 		{
-			d2 = s2[l2] - '0';
-			cy += result[l1 + l2 + 1] + (d1 * d2);
-			result[l1 + l2 + 1] = cy % 10;
-			cy /= 10;
+			k2 = s2[t2] - '0';
+			c += res[t1 + t2 + 1] + (k1 * k2);
+			res[t1 + t2 + 1] = c % 10;
+			c /= 10;
 		}
-		if (cy > 0)
-			result[l1 + l2 + 1] += cy;
+		if (c > 0)
+			res[t1 + t2 + 1] += c;
 	}
-	for (i = 0; i < l - 1; i++)
+	for (n = 0; n < t - 1; n++)
 	{
-		if (result[i])
-			a = 1;
-		if (a)
-			_putchar(result[i] + '0');
+		if (res[n])
+			z = 1;
+		if (z)
+			_putchar(res[n] + '0');
 	}
-	if (!a)
+	if (!z)
 		_putchar('0');
 	_putchar('\n');
-	free(result);
+	free(res);
 	return (0);
 }
